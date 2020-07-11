@@ -1,3 +1,3 @@
-## Attendance-WebApp
+## Todo-WebApp
 
-#### A Servlet JSP Project To Record And Maintain Attendance
+#### A Servlet JSP Project to make a Todo List
