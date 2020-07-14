@@ -13,37 +13,30 @@ import javax.servlet.http.HttpSession;
 import com.todo.DBServices.DBServices;
 import com.todo.bean.Todo;
 
-public class AddTodo extends HttpServlet {
+public class DeleteTodo extends HttpServlet {
 	private static final long serialVersionUID = 1L;
        
-    public AddTodo() {
+    /**
+     * @see HttpServlet#HttpServlet()
+     */
+    public DeleteTodo() {
         super();
     }
 	/**
 	 * @see HttpServlet#doPost(HttpServletRequest request, HttpServletResponse response)
 	 */
 	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-		String subject = request.getParameter("subject").trim();
-		String description = request.getParameter("description").trim();
-		String date = request.getParameter("date").toString().trim();
-		HttpSession session = request.getSession();
 		
-		int userId = (int)session.getAttribute("userId");
-		
-		Todo todo = new Todo();
-		todo.setSubject(subject);
-		todo.setDescription(description);
-		todo.setUserId(userId);
-		todo.setDate(date);
+		int todoId = Integer.parseInt(request.getParameter("todoId").trim());
 		
 		try {
-			DBServices.addTodo(todo);
-			
+            DBServices.deleteTodo(todoId);
+            HttpSession session = request.getSession();
 			List<Todo> todos = DBServices.getTodoList((int)session.getAttribute("userId"));
 			request.setAttribute("todos", todos);
 			request.getRequestDispatcher("UserHome.jsp").forward(request, response);
 			
-		}catch(Exception e) {
+		}catch (Exception e) {
 			errorMessage(request, response);
 		}
 		

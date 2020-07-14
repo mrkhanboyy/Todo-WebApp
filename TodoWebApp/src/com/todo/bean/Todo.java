@@ -2,7 +2,7 @@ package com.todo.bean;
 
 public class Todo {
 	
-	private int todoId;
+	private int todoId,userId;
 	private String subject,description;
 	private String date;
 	
@@ -30,6 +30,12 @@ public class Todo {
 	}
 	public void setDate(String date) {
 		this.date = date;
+	}
+	public int getUserId() {
+		return userId;
+	}
+	public void setUserId(int userId) {
+		this.userId = userId;
 	}
 	
 }

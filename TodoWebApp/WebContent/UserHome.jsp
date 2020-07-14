@@ -1,5 +1,6 @@
 <%@ page language="java" contentType="text/html; charset=ISO-8859-1"
     pageEncoding="ISO-8859-1"%>
+    <%@ page import="java.util.List,com.todo.bean.Todo" %>
 <!DOCTYPE html>
 <html lang="en">
   <head>
@@ -9,6 +10,8 @@
     <link rel="stylesheet" href="css/style.css" />
   </head>
   <body>
+  <% List<Todo> list = (List)request.getAttribute("todos"); %>
+  
     <nav>
       <div class="logo">
           <a href="#"><img src="images/logo.png" /></a>
@@ -18,8 +21,8 @@
     </nav>
     <section class="main-container">
        <div class="todobtn">
-           <a href="#">Add-Todo</a>
-           <a href="#">logout</a>
+           <a href="AddTodo.jsp">Add-Todo</a>
+           <a href="logout">logout</a>
        </div>
        <div class="table-container">
         <table class="table"> 
@@ -27,17 +30,26 @@
                 <td>SUBJECT</td>
                 <td>DESCRIPTION</td>
                 <td>DATE</td>
-                <td>EDIT</td>
+                
                 <td>DELETE</td>
                 </tr>
             </thead>
-            <tbody><tr>
-                <td>LEARN JAVA</td>
-                <td>LEARN JAVA</td>
-                <td> DATE</td>
-                <td><a href="#">EDIT</a></td>
-                <td><a href="#">DELETE</a></td>
+            <tbody>
+            <%for(Todo t : list){ %>
+            <tr>
+                <td><%= t.getSubject() %></td>
+                <td><%= t.getDescription()%></td>
+                <td><%= t.getDate() %></td>
+                <td>
+                	<form action="delete" method="post">
+                		<input type="hidden" name="todoId" value="<%= t.getTodoId() %>">
+                		<input type="submit" value="delete">
+                	
+                	</form>
+                </td>
                 </tr>
+                
+                <%} %>
             </tbody>
         </table>
        </div>

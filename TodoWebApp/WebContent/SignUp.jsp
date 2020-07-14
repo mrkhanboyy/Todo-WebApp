@@ -12,20 +12,34 @@
   <body>
     <header class="main-container">
       <div class="form-container">
-        <form action="" method="post">
+      
+        <!--                          email not exists condition check                           -->        
+            <%if(request.getAttribute("mes2")!=null){
+            	out.print(request.getAttribute("mes2"));
+            	out.print("<br>");
+            }
+             %>
+      
+        <form action="signup" method="post">
           <div class="row">
             <label>Name</label><br />
-            <input type="text" name="name" />
+            <input type="text" name="name" required="required"  />
           </div>
 
           <div class="row">
             <label>Email</label><br />
-            <input type="email" name="email" />
+    <!--                          email null condition check                           -->        
+            <%if(request.getAttribute("mes")!=null){
+            	out.print(request.getAttribute("mes"));
+            	out.print("<br>");
+            }
+             %>
+            <input type="email" name="email" required="required" />
           </div>
 
           <div class="row">
             <label>Password</label><br />
-            <input type="password" name="password" />
+            <input type="password" name="password"  required="required"/>
           </div>
 
           <div class="row btn">

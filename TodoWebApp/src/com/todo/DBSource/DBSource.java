@@ -9,7 +9,7 @@ public class DBSource {
 
 	public static Connection getConnection() throws ClassNotFoundException, SQLException {
 		Class.forName("com.mysql.cj.jdbc.Driver");
-		CONN =DriverManager.getConnection("jdbc:mysql://localhost:3306/attendance", "root", "");
+		CONN =DriverManager.getConnection("jdbc:mysql://localhost:3306/todo", "root", "");
 		return CONN;
 	}
 

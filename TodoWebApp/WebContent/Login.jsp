@@ -12,15 +12,15 @@
   <body>
     <header class="main-container">
       <div class="form-container">
-        <form action="" method="POST">
+        <form action="login" method="POST">
           <div class="row">
             <label>Email</label><br />
-            <input type="email" name="email" />
+            <input type="email" name="email" required="required"/>
           </div>
 
           <div class="row">
             <label>Password</label><br />
-            <input type="password" name="password" />
+            <input type="password" name="password" required="required"/>
           </div>
 
           <div class="row btn">

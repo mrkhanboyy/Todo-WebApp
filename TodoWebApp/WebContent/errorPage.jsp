@@ -42,11 +42,11 @@
   <body>
     <header class="main-Container">
       <div class="message">
-        An error has occured.
+        <%= request.getAttribute("message") %>
       </div>
 
       <div class="container">
-        <a class="txt1" href="#">
+        <a class="txt1" href="<%= request.getAttribute("link")%>">
           <button class="btn" type="button">Retry</button>
         </a>
       </div>
