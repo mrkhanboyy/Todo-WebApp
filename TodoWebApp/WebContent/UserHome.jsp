@@ -1,4 +1,4 @@
-<%@ page language="java" contentType="text/html; charset=ISO-8859-1"
+<%@ page language="java" contentType="text/html; charset=ISO-8859-1" errorPage="error.jsp"
     pageEncoding="ISO-8859-1"%>
     <%@ page import="java.util.List,com.todo.bean.Todo" %>
 <!DOCTYPE html>
@@ -10,7 +10,12 @@
     <link rel="stylesheet" href="css/style.css" />
   </head>
   <body>
-  <% List<Todo> list = (List)request.getAttribute("todos"); %>
+  <% 
+  response.setHeader("Cache-Control", "no-cache, no-store, must-revalidate");
+	if(session.getAttribute("name") == null){
+		response.sendRedirect("Login.jsp");
+	}
+  List<Todo> list = (List)request.getAttribute("todos"); %>
   
     <nav>
       <div class="logo">

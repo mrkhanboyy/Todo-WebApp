@@ -1,4 +1,4 @@
-<%@ page language="java" contentType="text/html; charset=ISO-8859-1"
+<%@ page language="java" contentType="text/html; charset=ISO-8859-1" errorPage="error.jsp"
     pageEncoding="ISO-8859-1"%>
 <!DOCTYPE html>
 <html lang="en">
@@ -10,6 +10,13 @@
   </head>
 
   <body>
+  
+  <%
+  response.setHeader("Cache-Control", "no-cache, no-store, must-revalidate");
+	if(session.getAttribute("name") == null){
+		response.sendRedirect("Login.jsp");
+	}
+  %>
     <header class="main-container">
       <div class="form-container">
         <h1>Add Todo</h1>
