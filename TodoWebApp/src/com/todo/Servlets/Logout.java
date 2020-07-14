@@ -28,8 +28,6 @@ public class Logout extends HttpServlet {
 		
 		if (session != null) {
 			session.removeAttribute("name");
-			session.getMaxInactiveInterval();
-			session.invalidate();
 			response.sendRedirect("Login.jsp");
 		}else {
 			errorPage(request, response);

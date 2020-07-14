@@ -46,7 +46,7 @@
       </div>
 
       <div class="container">
-        <a class="txt1" href="<%= request.getAttribute("link")%>">
+        <a class="txt1" href="<% if( request.getAttribute("link")!=null){out.println(request.getAttribute("link"));}else{out.println("Login.jsp");} %>">
           <button class="btn" type="button">Retry</button>
         </a>
       </div>

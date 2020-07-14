@@ -1,4 +1,4 @@
-<%@ page language="java" contentType="text/html; charset=ISO-8859-1" errorPage="error.jsp"
+<%@ page language="java" contentType="text/html; charset=ISO-8859-1" errorPage="errorPage.jsp"
     pageEncoding="ISO-8859-1"%>
     <%@ page import="java.util.List,com.todo.bean.Todo" %>
 <!DOCTYPE html>
@@ -19,7 +19,7 @@
   
     <nav>
       <div class="logo">
-          <a href="#"><img src="images/logo.png" /></a>
+          <a href="UserHome.jsp"><img src="images/logo.png" /></a>
         <h2>TODO</h2>
       </div>
       
