@@ -1,9 +1,16 @@
+/*
+ * Todo
+ * 16-july-2020
+ */
+
 package com.todo.bean;
 
 public class Todo {
 	
-	private int todoId,userId;
-	private String subject,description;
+	private int userId;
+	private int todoId;
+	private String subject;
+	private String description;
 	private String date;
 	
 	

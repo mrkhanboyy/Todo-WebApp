@@ -2,8 +2,7 @@
 <web-app xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns="http://java.sun.com/xml/ns/javaee" xsi:schemaLocation="http://java.sun.com/xml/ns/javaee http://java.sun.com/xml/ns/javaee/web-app_3_0.xsd" version="3.0">
   <display-name>TodoWebApp</display-name>
  
- <!--  signup  -->
- 
+ <!--  Mapping SignUp.jsp to SignUp.java servlet  -->
  <servlet>
  <servlet-name>signUp</servlet-name>
  <servlet-class>com.todo.Servlets.SignUp</servlet-class>
@@ -13,9 +12,7 @@
  <url-pattern>/signup</url-pattern>
  </servlet-mapping>
  
- 
-  <!--  Login -->
-  
+  <!--  Mapping Login.jsp to Login.java servlet -->
  <servlet>
  <servlet-name>login</servlet-name>
  <servlet-class>com.todo.Servlets.Login</servlet-class>
@@ -25,8 +22,7 @@
  <url-pattern>/login</url-pattern>
  </servlet-mapping>
  
- <!--  adding todo -->
- 
+ <!--  Mapping AddTodo.jsp to AddTodo.java servlet -->
   <servlet>
  <servlet-name>addtodo</servlet-name>
  <servlet-class>com.todo.Servlets.AddTodo</servlet-class>
@@ -36,7 +32,7 @@
  <url-pattern>/addtodo</url-pattern>
  </servlet-mapping>
  
- <!--  delete todo -->
+ <!--  Mapping Delete form inside UserHome.jsp to Delete.java servlet -->
  <servlet>
  <servlet-name>deletetodo</servlet-name>
  <servlet-class>com.todo.Servlets.DeleteTodo</servlet-class>
@@ -47,8 +43,7 @@
  </servlet-mapping>
  
  
- <!--  Logout -->
-  
+ <!-- Mapping Logout button in UserHome.jsp to Logout.java servlet -->
  <servlet>
  <servlet-name>logout</servlet-name>
  <servlet-class>com.todo.Servlets.Logout</servlet-class>

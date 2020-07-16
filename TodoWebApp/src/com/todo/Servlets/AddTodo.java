@@ -4,7 +4,6 @@ import java.io.IOException;
 import java.util.List;
 
 import javax.servlet.ServletException;
-import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
@@ -14,20 +13,25 @@ import com.todo.DBServices.DBServices;
 import com.todo.bean.Todo;
 
 public class AddTodo extends HttpServlet {
-	private static final long serialVersionUID = 1L;
-       
-    public AddTodo() {
-        super();
-    }
+	
 	/**
+	 * 
+	 */
+	private static final long serialVersionUID = 1L;
+      
+    
+	/**
+	 * This method fetches three parameters (subject, description, date) from request
+	 * coming from AddTodo.jsp.   
+	 * 
 	 * @see HttpServlet#doPost(HttpServletRequest request, HttpServletResponse response)
 	 */
 	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		String subject = request.getParameter("subject").trim();
 		String description = request.getParameter("description").trim();
 		String date = request.getParameter("date").toString().trim();
-		HttpSession session = request.getSession();
 		
+		HttpSession session = request.getSession();
 		int userId = (int)session.getAttribute("userId");
 		
 		Todo todo = new Todo();
