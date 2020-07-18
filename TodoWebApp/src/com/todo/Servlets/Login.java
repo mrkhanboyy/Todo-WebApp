@@ -44,12 +44,10 @@ public class Login extends HttpServlet {
 	 */
 	protected void doPost(HttpServletRequest request, HttpServletResponse response) 
 						  throws ServletException, IOException {
-		 final String email = request.getParameter("email").trim();
-		 final String password = request.getParameter("password").trim();
-		
+		final String email = request.getParameter("email").trim();
+		final String password = request.getParameter("password").trim();
 		try {
 			User user = (User) DBServices.getUserDetails(email, password);
-			
 			if (user!=null) {
 				HttpSession session = request.getSession();
 				session.setAttribute("userId", user.getUserId());
